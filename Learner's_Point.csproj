@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E86B949B-0C3C-4E5C-B2DE-F1CDC7F74562}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Learner_s_Point</RootNamespace>
+    <AssemblyName>Learner%27s_Point</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.28\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.28\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.28\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard.Designer.cs">
+      <DependentUpon>Admin_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_email_verification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_email_verification.Designer.cs">
+      <DependentUpon>admin_email_verification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_reset_pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_reset_pass.Designer.cs">
+      <DependentUpon>admin_reset_pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_update_profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_update_profile.Designer.cs">
+      <DependentUpon>Admin_update_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_Add_Teacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="A_D_Add_Teacher.Designer.cs">
+      <DependentUpon>A_D_Add_Teacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_Approve_Students.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="A_D_Approve_Students.Designer.cs">
+      <DependentUpon>A_D_Approve_Students.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_Course_datails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="A_D_Course_datails.Designer.cs">
+      <DependentUpon>A_D_Course_datails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_post.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="A_D_post.Designer.cs">
+      <DependentUpon>A_D_post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="A_D_profile.Designer.cs">
+      <DependentUpon>A_D_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_Show_all_student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A_D_Show_all_student.Designer.cs">
+      <DependentUpon>A_D_Show_all_student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_Show_post_detailscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A_D_Show_post_detailscs.Designer.cs">
+      <DependentUpon>A_D_Show_post_detailscs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_students_details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="A_D_students_details.Designer.cs">
+      <DependentUpon>A_D_students_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_Teacher_Details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="A_D_Teacher_Details.Designer.cs">
+      <DependentUpon>A_D_Teacher_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_D_Total_students.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="A_D_Total_students.Designer.cs">
+      <DependentUpon>A_D_Total_students.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database_Connect.cs" />
+    <Compile Include="forgot_admin_password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgot_admin_password.Designer.cs">
+      <DependentUpon>forgot_admin_password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forgot_student_passwoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgot_student_passwoard.Designer.cs">
+      <DependentUpon>forgot_student_passwoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forgot_teacher_password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgot_teacher_password.Designer.cs">
+      <DependentUpon>forgot_teacher_password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_Page.Designer.cs">
+      <DependentUpon>Home_Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Login_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Login_Page.Designer.cs">
+      <DependentUpon>Admin_Login_Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="payment_System.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="payment_System.Designer.cs">
+      <DependentUpon>payment_System.cs</DependentUpon>
+    </Compile>
+    <Compile Include="student_dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_dashboard.Designer.cs">
+      <DependentUpon>student_dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="student_email_verification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_email_verification.Designer.cs">
+      <DependentUpon>student_email_verification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Login_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Login_Page.Designer.cs">
+      <DependentUpon>Student_Login_Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="student_reg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_reg.Designer.cs">
+      <DependentUpon>student_reg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="student_reset_pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_reset_pass.Designer.cs">
+      <DependentUpon>student_reset_pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_update_profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_update_profile.Designer.cs">
+      <DependentUpon>Student_update_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S_D_Enrolled_course.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="S_D_Enrolled_course.Designer.cs">
+      <DependentUpon>S_D_Enrolled_course.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S_D_Enrolled_course_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S_D_Enrolled_course_details.Designer.cs">
+      <DependentUpon>S_D_Enrolled_course_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S_D_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="S_D_Home.Designer.cs">
+      <DependentUpon>S_D_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S_D_make_payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S_D_make_payment.Designer.cs">
+      <DependentUpon>S_D_make_payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S_D_Post.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="S_D_Post.Designer.cs">
+      <DependentUpon>S_D_Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S_D_Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="S_D_Profile.Designer.cs">
+      <DependentUpon>S_D_Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S_D_Show_post_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S_D_Show_post_details.Designer.cs">
+      <DependentUpon>S_D_Show_post_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacehr_reset_password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacehr_reset_password.Designer.cs">
+      <DependentUpon>Teacehr_reset_password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacehr_update_profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacehr_update_profile.Designer.cs">
+      <DependentUpon>Teacehr_update_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teachers_Login_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teachers_Login_Page.Designer.cs">
+      <DependentUpon>Teachers_Login_Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="teacher_dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teacher_dashboard.Designer.cs">
+      <DependentUpon>teacher_dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher_email_verification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher_email_verification.Designer.cs">
+      <DependentUpon>Teacher_email_verification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_D_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="T_D_Home.Designer.cs">
+      <DependentUpon>T_D_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_D_My_tutorials.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="T_D_My_tutorials.Designer.cs">
+      <DependentUpon>T_D_My_tutorials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_D_Post_btn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="T_D_Post_btn.Designer.cs">
+      <DependentUpon>T_D_Post_btn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_D_Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="T_D_Profile.Designer.cs">
+      <DependentUpon>T_D_Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_D_Show_post_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T_D_Show_post_details.Designer.cs">
+      <DependentUpon>T_D_Show_post_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_D_Show_Tutorials_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T_D_Show_Tutorials_details.Designer.cs">
+      <DependentUpon>T_D_Show_Tutorials_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_D_Upload_btn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="T_D_Upload_btn.Designer.cs">
+      <DependentUpon>T_D_Upload_btn.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin_Dashboard.resx">
+      <DependentUpon>Admin_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_email_verification.resx">
+      <DependentUpon>admin_email_verification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_reset_pass.resx">
+      <DependentUpon>admin_reset_pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_update_profile.resx">
+      <DependentUpon>Admin_update_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_Add_Teacher.resx">
+      <DependentUpon>A_D_Add_Teacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_Approve_Students.resx">
+      <DependentUpon>A_D_Approve_Students.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_Course_datails.resx">
+      <DependentUpon>A_D_Course_datails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_post.resx">
+      <DependentUpon>A_D_post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_profile.resx">
+      <DependentUpon>A_D_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_Show_all_student.resx">
+      <DependentUpon>A_D_Show_all_student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_Show_post_detailscs.resx">
+      <DependentUpon>A_D_Show_post_detailscs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_students_details.resx">
+      <DependentUpon>A_D_students_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_Teacher_Details.resx">
+      <DependentUpon>A_D_Teacher_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_D_Total_students.resx">
+      <DependentUpon>A_D_Total_students.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgot_admin_password.resx">
+      <DependentUpon>forgot_admin_password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgot_student_passwoard.resx">
+      <DependentUpon>forgot_student_passwoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgot_teacher_password.resx">
+      <DependentUpon>forgot_teacher_password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_Page.resx">
+      <DependentUpon>Home_Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Login_Page.resx">
+      <DependentUpon>Admin_Login_Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="payment_System.resx">
+      <DependentUpon>payment_System.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student_dashboard.resx">
+      <DependentUpon>student_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student_email_verification.resx">
+      <DependentUpon>student_email_verification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Login_Page.resx">
+      <DependentUpon>Student_Login_Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student_reg.resx">
+      <DependentUpon>student_reg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student_reset_pass.resx">
+      <DependentUpon>student_reset_pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_update_profile.resx">
+      <DependentUpon>Student_update_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S_D_Enrolled_course.resx">
+      <DependentUpon>S_D_Enrolled_course.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S_D_Enrolled_course_details.resx">
+      <DependentUpon>S_D_Enrolled_course_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S_D_Home.resx">
+      <DependentUpon>S_D_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S_D_make_payment.resx">
+      <DependentUpon>S_D_make_payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S_D_Post.resx">
+      <DependentUpon>S_D_Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S_D_Profile.resx">
+      <DependentUpon>S_D_Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S_D_Show_post_details.resx">
+      <DependentUpon>S_D_Show_post_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacehr_reset_password.resx">
+      <DependentUpon>Teacehr_reset_password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacehr_update_profile.resx">
+      <DependentUpon>Teacehr_update_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teachers_Login_Page.resx">
+      <DependentUpon>Teachers_Login_Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teacher_dashboard.resx">
+      <DependentUpon>teacher_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher_email_verification.resx">
+      <DependentUpon>Teacher_email_verification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_D_Home.resx">
+      <DependentUpon>T_D_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_D_My_tutorials.resx">
+      <DependentUpon>T_D_My_tutorials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_D_Post_btn.resx">
+      <DependentUpon>T_D_Post_btn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_D_Profile.resx">
+      <DependentUpon>T_D_Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_D_Show_post_details.resx">
+      <DependentUpon>T_D_Show_post_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_D_Show_Tutorials_details.resx">
+      <DependentUpon>T_D_Show_Tutorials_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_D_Upload_btn.resx">
+      <DependentUpon>T_D_Upload_btn.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
