@@ -38,9 +38,10 @@ Before running Learner's Point on your computer, ensure you have the following s
 To run Learner's Point on your local machine, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
-bash
 
+```bash
     git clone https://github.com/Rafiqul-jakir/Learner-s-Point-an-E-Learning-plateform.git
+```
 
 2. Open the project in Microsoft Visual Studio.
 
